@@ -11,8 +11,8 @@ Generator-Commons main repository
 
 ### 1. Add the dependencies
 
-> **_Note:_**<br>
-> Replace version you want to use. Check the latest [Packages](https://github.com/myConsciousness/generator-commons/packages).<br>
+> **_Note:_**</br>
+> Replace version you want to use. Check the latest [Packages](https://github.com/myConsciousness/generator-commons/packages).</br>
 > Please contact me for a token to download the package.
 
 **_Maven_**
@@ -21,7 +21,7 @@ Generator-Commons main repository
 <dependency>
   <groupId>org.thinkit.generator.common</groupId>
   <artifactId>generator-commons</artifactId>
-  <version>v1.0.17</version>
+  <version>v1.1.0</version>
 </dependency>
 
 <servers>
@@ -48,13 +48,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.thinkit.generator.common:generator-commons:v1.0.17'
+    implementation 'org.thinkit.generator.common:generator-commons:v1.1.0'
 }
 ```
 
 ## License
 
-```
+```license
 Copyright 2020 Kato Shinya.
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
