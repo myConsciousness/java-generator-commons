@@ -12,9 +12,9 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
-import org.thinkit.generator.common.catalog.MethodType;
+import org.thinkit.generator.common.duke.catalog.MethodType;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -25,7 +25,7 @@ import lombok.ToString;
 /**
  * プログラムリソースにおけるメソッド処理を抽象化した抽象クラスです。<br>
  * この抽象クラスではメソッド処理の定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  * <p>
  * 以下のメソッドを使用することによりメソッド種別を変更することができます。<br>
  * {@link #toGetter()} <br>
@@ -37,9 +37,6 @@ import lombok.ToString;
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

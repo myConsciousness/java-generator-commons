@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.dto;
+package org.thinkit.generator.common.duke.dto;
 
 /**
  * 生成されたリソースを格納したデータクラスであることを示すマーカーインターフェースです。
@@ -21,5 +21,5 @@ package org.thinkit.generator.common.dto;
  * @since 1.0
  * @version 1.0
  */
-public interface Resource {
+public interface JavaResource {
 }

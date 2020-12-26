@@ -12,9 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
-
-import org.thinkit.generator.common.factory.Component;
+package org.thinkit.generator.common.duke.factory;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -25,18 +23,15 @@ import lombok.ToString;
 /**
  * プログラムリソースにおける説明を抽象化した抽象クラスです。<br>
  * この抽象クラスでは説明定義に必要な情報を定義します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode
-public abstract class Description implements Component {
+public abstract class Description implements JavaComponent {
 
     /**
      * 説明

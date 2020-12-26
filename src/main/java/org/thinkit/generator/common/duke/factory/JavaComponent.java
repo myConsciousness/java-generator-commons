@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory;
+package org.thinkit.generator.common.duke.factory;
 
 /**
  * 構成部品を抽象化したインターフェースです。
@@ -25,12 +25,12 @@ package org.thinkit.generator.common.factory;
  * @since 1.0
  * @version 1.0
  */
-public interface Component {
+public interface JavaComponent {
 
     /**
-     * リソースを生成し文字列表現として返却する処理を定義するメソッドです。<br>
-     * このメソッドを定義している {@link Component} を継承した具象サブクラスは<br>
-     * 必ずこのメソッドを実装する必要があります。
+     * リソースを生成し文字列表現として返却する処理を定義するメソッドです。
+     * <p>
+     * このメソッドを定義している {@link JavaComponent} を継承した具象サブクラスは必ずこのメソッドを実装する必要があります。
      *
      *
      * @return 各要素を管理する部品で生成されたJavaリソース

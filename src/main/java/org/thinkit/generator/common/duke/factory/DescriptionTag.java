@@ -12,10 +12,9 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
-import org.thinkit.generator.common.catalog.Annotation;
-import org.thinkit.generator.common.factory.Component;
+import org.thinkit.generator.common.duke.catalog.Annotation;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -26,18 +25,15 @@ import lombok.ToString;
 /**
  * プログラムリソースにおける引数のアノテーション情報を抽象化した抽象クラスです。<br>
  * この抽象クラスでは引数のアノテーション定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode
-public abstract class DescriptionTag implements Component {
+public abstract class DescriptionTag implements JavaComponent {
 
     /**
      * 変数名

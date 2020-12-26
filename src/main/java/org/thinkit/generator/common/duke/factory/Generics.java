@@ -12,12 +12,10 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.thinkit.generator.common.factory.Component;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -28,18 +26,15 @@ import lombok.ToString;
 /**
  * プログラムリソースにおける総称型を抽象化した抽象クラスです。<br>
  * この抽象クラスでは総称型の定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode
-public abstract class Generics implements Component {
+public abstract class Generics implements JavaComponent {
 
     /**
      * 総称型リスト

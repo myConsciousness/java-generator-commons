@@ -12,10 +12,10 @@
  * the License.
  */
 
-package org.thinkit.generator.common.formatter;
+package org.thinkit.generator.common.duke.formatter;
 
-import org.thinkit.generator.common.dto.Resource;
-import org.thinkit.generator.common.dto.ResourceMatrix;
+import org.thinkit.generator.common.duke.dto.JavaResource;
+import org.thinkit.generator.common.duke.dto.JavaResourceMatrix;
 
 import lombok.NonNull;
 
@@ -26,7 +26,7 @@ import lombok.NonNull;
  * @since 1.0
  * @version 1.0
  */
-public interface ResourceFormatter<I extends ResourceMatrix, R extends Resource> {
+public interface JavaResourceFormatter<I extends JavaResourceMatrix, R extends JavaResource> {
 
     /**
      * {@code resourceMatrix} に格納されたリソース情報からリソースを生成し返却します。

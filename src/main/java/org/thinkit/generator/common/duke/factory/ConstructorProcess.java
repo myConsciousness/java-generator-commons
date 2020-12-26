@@ -12,9 +12,9 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
-import org.thinkit.generator.common.catalog.ConstructorType;
+import org.thinkit.generator.common.duke.catalog.ConstructorType;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

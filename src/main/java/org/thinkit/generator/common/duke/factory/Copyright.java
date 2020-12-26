@@ -12,13 +12,12 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
 import java.time.LocalDate;
 
 import org.apache.commons.lang3.StringUtils;
 import org.thinkit.common.exception.LogicException;
-import org.thinkit.generator.common.factory.Component;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -29,18 +28,15 @@ import lombok.ToString;
 /**
  * プログラムリソースにおける著作権を抽象化した抽象クラスです。<br>
  * この抽象クラスでは著作権定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode
-public abstract class Copyright implements Component {
+public abstract class Copyright implements JavaComponent {
 
     /**
      * プロジェクト名

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;

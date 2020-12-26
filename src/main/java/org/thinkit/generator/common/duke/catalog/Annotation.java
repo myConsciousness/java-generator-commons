@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.catalog;
+package org.thinkit.generator.common.duke.catalog;
 
 import org.thinkit.api.catalog.BiCatalog;
 

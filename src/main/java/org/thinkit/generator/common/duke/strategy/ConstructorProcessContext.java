@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource.strategy;
+package org.thinkit.generator.common.duke.strategy;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

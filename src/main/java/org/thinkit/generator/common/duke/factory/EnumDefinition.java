@@ -12,13 +12,11 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
+package org.thinkit.generator.common.duke.factory;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.thinkit.generator.common.factory.Component;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -30,7 +28,7 @@ import lombok.ToString;
  * プログラムリソースにおける列挙子の定義を抽象化した抽象クラスです。
  * <p>
  * この抽象クラスでは列挙子の基本情報を定義します。この抽象クラスを継承する具象クラスは必ず
- * {@link Component#createResource()} を実装してください。
+ * {@link JavaComponent#createResource()} を実装してください。
  * <p>
  * 列挙子に固有の値を設定したい場合は {@link EnumDefinition} クラスのインスタンスを生成した後に
  * {@link #add(Object)} メソッドを呼び出してください。
@@ -38,13 +36,10 @@ import lombok.ToString;
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)
-public abstract class EnumDefinition implements Component {
+public abstract class EnumDefinition implements JavaComponent {
 
     /**
      * 列挙子の値の区切り文字

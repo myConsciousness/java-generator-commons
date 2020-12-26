@@ -11,10 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-package org.thinkit.generator.common.factory.resource;
-
-import org.thinkit.generator.common.factory.Component;
+package org.thinkit.generator.common.duke.factory;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -26,14 +23,14 @@ import lombok.ToString;
  * パッケージを抽象化したクラスです。
  * <p>
  * この抽象クラスでは依存パッケージを定義するために必要な情報を保持します。この抽象クラスを継承する具象クラスは必ず
- * {@link Component#createResource()} を実装してください。
+ * {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
-public abstract class Package implements Component {
+public abstract class Package implements JavaComponent {
 
     /**
      * パッケージ名

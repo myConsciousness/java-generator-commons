@@ -12,9 +12,7 @@
  * the License.
  */
 
-package org.thinkit.generator.common.factory.resource;
-
-import org.thinkit.generator.common.factory.Component;
+package org.thinkit.generator.common.duke.factory;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -29,12 +27,10 @@ import lombok.ToString;
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
- *
- * @see Component
  */
 @ToString
 @EqualsAndHashCode
-public abstract class Field implements Component {
+public abstract class Field implements JavaComponent {
 
     /**
      * フィールドの定義
