@@ -24,7 +24,7 @@ Generator-Commons main repository
 
 ```xml
 <dependency>
-  <groupId>org.thinkit.generator.common.java</groupId>
+  <groupId>org.thinkit.generator.common.duke</groupId>
   <artifactId>java-generator-commons</artifactId>
   <version>v1.0.0</version>
 </dependency>
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.thinkit.generator.common.java:java-generator-commons:v1.0.0'
+    implementation 'org.thinkit.generator.common.duke:java-generator-commons:v1.0.0'
 }
 ```
 
