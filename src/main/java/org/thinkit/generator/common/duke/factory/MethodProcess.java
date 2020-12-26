@@ -30,13 +30,9 @@ import lombok.ToString;
  * 以下のメソッドを使用することによりメソッド種別を変更することができます。<br>
  * {@link #toGetter()} <br>
  * {@link #toSetter()} <br>
- * <p>
- * メソッド種別は以下のメソッドで取得できます。<br>
- * {@link #getMethodType()}
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

@@ -15,11 +15,10 @@
 package org.thinkit.generator.common.duke.dto;
 
 /**
- * 生成されたリソースを格納したデータクラスであることを示すマーカーインターフェースです。
+ * 生成されたJavaリソースを格納したデータクラスであることを示すマーカーインターフェースです。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 public interface JavaResource {
 }

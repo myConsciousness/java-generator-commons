@@ -21,15 +21,10 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * コンストラクタの処理定義をする際のストラテジーを判断するコンテキストを抽象化したクラスです。<br>
- * {#link ConstructorProcessContext} を継承した具象クラスは以下の抽象メソッドを実装する必要があります。<br>
- * {@link #toConstructorProcess(String, String)} <br>
+ * コンストラクタの処理定義をする際のストラテジーを判断するコンテキストを抽象化したクラスです。
  *
- * @author 1.0
- * @since 1.0
- * @version 1.0
- *
- * @see #toConstructorProcess(String, String)
+ * @author Kato Shinya
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode

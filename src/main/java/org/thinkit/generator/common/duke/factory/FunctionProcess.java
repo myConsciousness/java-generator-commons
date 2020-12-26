@@ -21,11 +21,10 @@ import lombok.ToString;
 /**
  * プログラムリソースにおける機能の処理を抽象化した抽象クラスです。<br>
  * この抽象クラスでは機能の処理定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

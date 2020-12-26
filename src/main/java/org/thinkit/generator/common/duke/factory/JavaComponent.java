@@ -17,13 +17,10 @@ package org.thinkit.generator.common.duke.factory;
 /**
  * 構成部品を抽象化したインターフェースです。
  * <p>
- * このインターフェースを実装する部品クラスは必ず {@link #createResource()} を実装してください。
- * <p>
- * {@link #createResource()} メソッドでは各部品が担当するリソースを生成し文字列型として返却する処理を実装してください。
+ * このインターフェースを実装する部品クラスは必ず {@link #createResource()} を実装してください。 {@link #createResource()} メソッドでは各部品が担当するリソースを生成し文字列型として返却する処理を実装してください。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 public interface JavaComponent {
 

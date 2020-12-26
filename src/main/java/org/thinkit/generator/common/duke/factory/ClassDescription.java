@@ -24,15 +24,10 @@ import lombok.ToString;
  * プログラムリソースにおけるクラスの説明を抽象化した抽象クラスです。
  * <p>
  * この抽象クラスではクラスの説明定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
- * @see Description
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

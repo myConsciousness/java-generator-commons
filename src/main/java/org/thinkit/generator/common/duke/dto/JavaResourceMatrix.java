@@ -18,8 +18,7 @@ package org.thinkit.generator.common.duke.dto;
  * リソースを生成する際に必要となる情報が格納されたマトリクスであることを示すマーカーインターフェースです。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 public interface JavaResourceMatrix {
 }

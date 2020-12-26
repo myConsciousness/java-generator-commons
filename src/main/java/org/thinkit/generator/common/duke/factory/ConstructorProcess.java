@@ -25,21 +25,15 @@ import lombok.ToString;
 /**
  * プログラムリソースにおけるコンストラクタ処理を抽象化した抽象クラスです。<br>
  * この抽象クラスではコンストラクタ処理の定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。
  * <p>
  * 以下のメソッドを使用することによりコンストラクタの状態を変更することができます。<br>
  * {@link #toDefault()} <br>
  * {@link #toRequired()} <br>
  * {@link #toCopying()} <br>
- * <p>
- * コンストラクタの状態は以下のメソッドで取得できます。<br>
- * {@link #getConstructorState()}
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
- * @see Component
- * @see Component#createResource()
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

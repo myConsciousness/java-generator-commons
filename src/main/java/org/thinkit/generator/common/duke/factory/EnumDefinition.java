@@ -34,8 +34,7 @@ import lombok.ToString;
  * {@link #add(Object)} メソッドを呼び出してください。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

@@ -29,8 +29,7 @@ import lombok.ToString;
  * この抽象クラスを継承する具象クラスは必ず {@link #createResource()} を実装してください。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
@@ -175,7 +174,7 @@ public abstract class Resource {
     /**
      * フィールド定義を追加します。
      *
-     * @param enumeration フィールド定義
+     * @param field フィールド定義
      * @return 自分自身のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合

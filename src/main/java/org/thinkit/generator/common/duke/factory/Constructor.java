@@ -21,14 +21,10 @@ import lombok.ToString;
 /**
  * プログラムリソースにおけるコンストラクタを抽象化した抽象クラスです。<br>
  * この抽象クラスではコンストラクタ定義に必要な情報を保持します。<br>
- * この抽象クラスを継承する具象クラスは必ず {@link Component#createResource()} を実装してください。<br>
+ * この抽象クラスを継承する具象クラスは必ず {@link JavaComponent#createResource()} を実装してください。<br>
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
- *
- * @see Component
- * @see Component#createResource()
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)

@@ -23,18 +23,16 @@ import lombok.NonNull;
  * プログラムリソースの各構成要素を抽象化したオブジェクトを返却するファクトリクラスです。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 public abstract class ResourceFactory {
 
     /**
      * {@link Copyright}のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory}を継承した具象クラスは必ず {@link #createCopyright(String, String)}
+     * {@link ResourceFactory}を継承した具象クラスは必ず {@link #createCopyright(String)}
      * を実装してください。
      *
-     * @param creator      作成者
-     * @param creationDate 作成日付
+     * @param creator 作成者
      * @return {@link Copyright} のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
@@ -100,7 +98,7 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Inheritance} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createDescription(String)}
+     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createInheritance(String)}
      * を実装してください。
      *
      * @param literal 継承名
@@ -112,8 +110,8 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Inheritance} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createDescription(String)}
-     * を実装してください。
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createInheritance(String, Generics)} を実装してください。
      *
      * @param literal  継承名
      * @param generics 総称型
@@ -125,7 +123,7 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Interface} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createDescription(String)}
+     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createInterface(String)}
      * を実装してください。
      *
      * @param literal インターフェース名
@@ -137,8 +135,8 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Interface} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createDescription(String)}
-     * を実装してください。
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createInterface(String, Generics)} を実装してください。
      *
      * @param literal  インターフェース名
      * @param generics 総称型
@@ -150,8 +148,7 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Generics} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createDescription(String)}
-     * を実装してください。
+     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createGenerics()} を実装してください。
      *
      * @return {@link Generics} のインスタンス
      *
@@ -161,8 +158,8 @@ public abstract class ResourceFactory {
 
     /**
      * {@link EnumDefinition} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createEnumeration(String)}
-     * を実装してください。
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createEnumeration(EnumDefinition, Description)} を実装してください。
      *
      * @param literal 列挙定数の名称
      * @return {@link EnumDefinition} のインスタンス
@@ -173,8 +170,8 @@ public abstract class ResourceFactory {
 
     /**
      * {@link Enumeration} のインスタンスを生成し返却する抽象メソッドです。<br>
-     * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createEnumeration(String)}
-     * を実装してください。
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createEnumeration(EnumDefinition, Description)} を実装してください。
      *
      * @param enumDefinition 列挙子定義
      * @param description    列挙子の説明
@@ -322,7 +319,8 @@ public abstract class ResourceFactory {
     /**
      * {@link Method} のインスタンスを生成し返却する抽象メソッドです。<br>
      * {@link ResourceFactory} を継承した具象クラスは必ず
-     * {@link #createMethod(String, FunctionDescription)} を実装してください。
+     * {@link #createMethod(Modifier, String, String, FunctionDescription)}
+     * を実装してください。
      *
      * @param modifier            アクセス修飾子
      * @param returnType          返却する型
@@ -372,9 +370,10 @@ public abstract class ResourceFactory {
     public abstract DependentPackage createDependentPackage(@NonNull String dependentPackage);
 
     /**
-     * {@link Resource} のインスタンスを生成し返却する抽象メソッドです。<br>
+     * {@link Resource} のインスタンスを生成し返却する抽象メソッドです。
+     * <p>
      * {@link ResourceFactory} を継承した具象クラスは必ず
-     * {@link #createResource(Copyright, Package, ClassDescription, String, Field)}
+     * {@link #createResource(Copyright, Package, ClassDescription, String)}
      * を実装してください。
      *
      * @param copyright        著作権

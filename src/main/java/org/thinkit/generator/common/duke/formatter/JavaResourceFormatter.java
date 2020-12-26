@@ -23,8 +23,7 @@ import lombok.NonNull;
  * リソース定義からリソースを生成する処理を抽象化したインターフェースです。
  *
  * @author Kato Shinya
- * @since 1.0
- * @version 1.0
+ * @since 1.0.0
  */
 public interface JavaResourceFormatter<I extends JavaResourceMatrix, R extends JavaResource> {
 
@@ -32,9 +31,9 @@ public interface JavaResourceFormatter<I extends JavaResourceMatrix, R extends J
      * {@code resourceMatrix} に格納されたリソース情報からリソースを生成し返却します。
      *
      * @param resourceMatrix リソース定義を格納したデータクラス。このデータクラスは必ずマーカーインターフェースの
-     *                       {@link ResourceMatrix} を実装しているクラスである必要があります。
+     *                       {@link JavaResourceMatrix} を実装しているクラスである必要があります。
      * @return リソース定義から生成されたリソースを格納したデータクラス。このデータクラスは必ずマーカーインターフェースである
-     *         {@link Resource} を実装しているクラスである必要があります。
+     *         {@link JavaResource} を実装しているクラスである必要があります。
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */

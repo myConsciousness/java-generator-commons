@@ -26,9 +26,8 @@ import lombok.ToString;
  * {#link ConstructorProcessContext} を継承した具象クラスは {@link #toProcess(String)}
  * を実装する必要があります。
  *
- * @author 1.0
- * @since 1.0
- * @version 1.0
+ * @author Kato Shinya
+ * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
