@@ -14,34 +14,20 @@
 
 package org.thinkit.generator.common.catalog;
 
-import org.thinkit.api.catalog.Catalog;
+import org.thinkit.api.catalog.BiCatalog;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * クラスで使用するアノテーションを管理するカタログです。<br>
- * {@link #getAnnotation()} を使用することで各要素のアノテーションを取得することができます。
- * <p>
- * 以下の静的メソッドを使用することでも各アノテーションを取得することができます。<br>
- * {@link #author()} <br>
- * {@link #since()} <br>
- * {@link #version()} <br>
- * {@link #lombokNonNull()} <br>
- * {@link #lombokToString()} <br>
- * {@link #lombokEqualsAndHashCode()} <br>
- * {@link #param()} <br>
- * {@link #lombokSetter()} <br>
- * {@link #lombokGetter()} <br>
- * {@link #returnValue()}
+ * クラスで使用するアノテーションを管理するカタログです。
  *
  * @author Kato Shinya
  * @since 1.0
  * @version 1.0
  */
-@Getter
 @RequiredArgsConstructor
-public enum Annotation implements Catalog<Annotation> {
+public enum Annotation implements BiCatalog<Annotation, String> {
 
     /**
      * 作成者
@@ -96,110 +82,12 @@ public enum Annotation implements Catalog<Annotation> {
     /**
      * コード値
      */
+    @Getter
     private final int code;
 
     /**
-     * アノテーション
+     * タグ
      */
-    private final String annotation;
-
-    /**
-     * 作成者のアノテーションを返却します。
-     *
-     * @return 作成者のアノテーション
-     * @see #AUTHOR
-     */
-    public static String author() {
-        return AUTHOR.getAnnotation();
-    }
-
-    /**
-     * 作成時バージョンのアノテーションを返却します。
-     *
-     * @return 作成時バージョンのアノテーションを返却します。
-     * @see #SINCE
-     */
-    public static String since() {
-        return SINCE.getAnnotation();
-    }
-
-    /**
-     * 現行バージョンのアノテーションを返却します。
-     *
-     * @return 現行バージョンのアノテーションを返却します。
-     * @see #VERSION
-     */
-    public static String version() {
-        return VERSION.getAnnotation();
-    }
-
-    /**
-     * LombokのNonNullアノテーションを返却します。
-     *
-     * @return LombokのNonNullアノテーションを返却します。
-     * @see #LOMBOK_NON_NULL
-     */
-    public static String lombokNonNull() {
-        return LOMBOK_NON_NULL.getAnnotation();
-    }
-
-    /**
-     * LombokのToStringアノテーションを返却します。
-     *
-     * @return LombokのToStringアノテーションを返却します。
-     * @see #LOMBOK_TO_STRING
-     */
-    public static String lombokToString() {
-        return LOMBOK_TO_STRING.getAnnotation();
-    }
-
-    /**
-     * LombokのEqualsAndHashCodeアノテーションを返却します。
-     *
-     * @return LombokのEqualsAndHashCodeアノテーションを返却します。
-     * @see #EqualsAndHashCode
-     */
-    public static String lombokEqualsAndHashCode() {
-        return LOMBOK_EQUALS_AND_HASH_CODE.getAnnotation();
-    }
-
-    /**
-     * 引数情報のアノテーションを返却します。
-     *
-     * @return 引数情報のアノテーションを返却します。
-     * @see #PARAM
-     */
-    public static String param() {
-        return PARAM.getAnnotation();
-    }
-
-    /**
-     * LombokのSetterアノテーションを返却します。
-     *
-     * @return LombokのSetterアノテーションを返却します。
-     * @see #LOMBOK_SETTER
-     */
-    public static String lombokSetter() {
-        return LOMBOK_SETTER.getAnnotation();
-    }
-
-    /**
-     * LombokのGetterアノテーションを返却します。
-     *
-     * @return LombokのGetterアノテーションを返却します。
-     * @see #LOMBOK_GETTER
-     */
-    public static String lombokGetter() {
-        return LOMBOK_GETTER.getAnnotation();
-    }
-
-    /**
-     * 返却情報アノテーションを返却します。
-     *
-     * @return 返却情報アノテーションを返却します。
-     * @see #RETURN
-     */
-    public static String returnValue() {
-        return RETURN.getAnnotation();
-    }
+    @Getter
+    private final String tag;
 }
