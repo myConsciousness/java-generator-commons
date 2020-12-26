@@ -1,4 +1,9 @@
-# Generator Commons
+![Build](https://img.shields.io/badge/Build-Automated-2980b9.svg?style=for-the-badge)
+![Latest Version](https://img.shields.io/badge/Latest_Version-v1.0.0-27ae60.svg?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Apache_2.0-e74c3c.svg?style=for-the-badge)</br>
+![Java CI with Gradle](https://github.com/myConsciousness/java-generator-commons/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master)
+
+# Java Generator Commons
 
 <!-- START doctoc -->
 <!-- END doctoc -->
@@ -12,16 +17,16 @@ Generator-Commons main repository
 ### 1. Add the dependencies
 
 > **_Note:_**</br>
-> Replace version you want to use. Check the latest [Packages](https://github.com/myConsciousness/generator-commons/packages).</br>
+> Replace version you want to use. Check the latest [Packages](https://github.com/myConsciousness/java-generator-commons/packages).</br>
 > Please contact me for a token to download the package.
 
 **_Maven_**
 
 ```xml
 <dependency>
-  <groupId>org.thinkit.generator.common</groupId>
-  <artifactId>generator-commons</artifactId>
-  <version>v1.1.0</version>
+  <groupId>org.thinkit.generator.common.java</groupId>
+  <artifactId>java-generator-commons</artifactId>
+  <version>v1.0.0</version>
 </dependency>
 
 <servers>
@@ -39,7 +44,7 @@ Generator-Commons main repository
 repositories {
     maven {
         name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/myConsciousness/generator-commons")
+        url = uri("https://maven.pkg.github.com/myConsciousness/java-generator-commons")
         credentials {
           username = "myConsciousness"
           password = "xxxxxxxxxxxxxxxxxx"
@@ -48,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.thinkit.generator.common:generator-commons:v1.1.0'
+    implementation 'org.thinkit.generator.common.java:java-generator-commons:v1.0.0'
 }
 ```
 
@@ -70,13 +75,13 @@ the License.
 
 ## More Information
 
-`Generator Commons` was designed and implemented by Kato Shinya, who works as a freelance developer.
+`Java Generator Commons` was designed and implemented by Kato Shinya, who works as a freelance developer.
 
 Regardless of the means or content of communication, I would love to hear from you if you have any questions or concerns. I do not check my email box very often so a response may be delayed, anyway thank you for your interest!
 
 - [Creator Profile](https://github.com/myConsciousness)
 - [Creator Website](https://myconsciousness.github.io/)
-- [License](https://github.com/myConsciousness/generator-commons/blob/master/LICENSE)
-- [Release Note](https://github.com/myConsciousness/generator-commons/releases)
-- [Package](https://github.com/myConsciousness/generator-commons/packages)
-- [File a Bug](https://github.com/myConsciousness/generator-commons/issues)
+- [License](https://github.com/myConsciousness/java-generator-commons/blob/master/LICENSE)
+- [Release Note](https://github.com/myConsciousness/java-generator-commons/releases)
+- [Package](https://github.com/myConsciousness/java-generator-commons/packages)
+- [File a Bug](https://github.com/myConsciousness/java-generator-commons/issues)
