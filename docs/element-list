@@ -1,0 +1,5 @@
+org.thinkit.generator.common.duke.catalog
+org.thinkit.generator.common.duke.dto
+org.thinkit.generator.common.duke.factory
+org.thinkit.generator.common.duke.formatter
+org.thinkit.generator.common.duke.strategy
