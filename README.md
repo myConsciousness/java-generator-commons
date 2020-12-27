@@ -1,5 +1,5 @@
 ![Build](https://img.shields.io/badge/Build-Automated-2980b9.svg?style=for-the-badge)
-![Latest Version](https://img.shields.io/badge/Latest_Version-v1.0.0-27ae60.svg?style=for-the-badge)
+![Latest Version](https://img.shields.io/badge/Latest_Version-v1.0.1-27ae60.svg?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Apache_2.0-e74c3c.svg?style=for-the-badge)</br>
 ![Java CI with Gradle](https://github.com/myConsciousness/java-generator-commons/workflows/Java%20CI%20with%20Gradle/badge.svg?branch=master)
 
@@ -26,7 +26,7 @@ Generator-Commons main repository
 <dependency>
   <groupId>org.thinkit.generator.common.duke</groupId>
   <artifactId>java-generator-commons</artifactId>
-  <version>v1.0.0</version>
+  <version>v1.0.1</version>
 </dependency>
 
 <servers>
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.thinkit.generator.common.duke:java-generator-commons:v1.0.0'
+    implementation 'org.thinkit.generator.common.duke:java-generator-commons:v1.0.1'
 }
 ```
 
