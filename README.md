@@ -6,6 +6,7 @@
 # Java Generator Commons
 
 <!-- START doctoc -->
+
 <!-- END doctoc -->
 
 ## What is it?
