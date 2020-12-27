@@ -31,8 +31,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class DescriptionTag implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class DescriptionTag extends JavaComponent {
 
     /**
      * 変数名

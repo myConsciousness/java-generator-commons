@@ -35,8 +35,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Function implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Function extends JavaComponent {
 
     /**
      * 関数名

@@ -29,8 +29,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Inheritance implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Inheritance extends JavaComponent {
 
     /**
      * 継承名

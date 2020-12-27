@@ -29,8 +29,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Process implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Process extends JavaComponent {
 
     /**
      * 変数名

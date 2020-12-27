@@ -38,7 +38,7 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)
-public abstract class EnumDefinition implements JavaComponent {
+public abstract class EnumDefinition extends JavaComponent {
 
     /**
      * 列挙子の値の区切り文字

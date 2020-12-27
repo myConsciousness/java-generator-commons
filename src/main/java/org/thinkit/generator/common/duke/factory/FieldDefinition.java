@@ -28,8 +28,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class FieldDefinition implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class FieldDefinition extends JavaComponent {
 
     /**
      * データ型

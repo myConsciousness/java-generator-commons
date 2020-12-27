@@ -29,14 +29,14 @@ import lombok.RequiredArgsConstructor;
 public enum LombokState implements Catalog<LombokState> {
 
     /**
-     * Lombok
-     */
-    LOMBOK(0),
-
-    /**
      * 非Lombok
      */
-    DELOMBOK(1);
+    NONE(0),
+
+    /**
+     * Lombok
+     */
+    LOMBOK(1);
 
     /**
      * コード値

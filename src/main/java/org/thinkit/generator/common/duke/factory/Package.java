@@ -29,8 +29,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Package implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Package extends JavaComponent {
 
     /**
      * パッケージ名

@@ -30,8 +30,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class DependentPackage implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class DependentPackage extends JavaComponent {
 
     /**
      * 依存パッケージリスト

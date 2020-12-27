@@ -14,23 +14,38 @@
 
 package org.thinkit.generator.common.duke.factory;
 
+import org.thinkit.generator.common.duke.catalog.LombokState;
+
+import lombok.AccessLevel;
+import lombok.Getter;
+
 /**
- * 構成部品を抽象化したインターフェースです。
- * <p>
- * このインターフェースを実装する部品クラスは必ず {@link #createResource()} を実装してください。 {@link #createResource()} メソッドでは各部品が担当するリソースを生成し文字列型として返却する処理を実装してください。
+ * Javaの構成部品を抽象化したクラスです。
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
-public interface JavaComponent {
+public abstract class JavaComponent implements Component {
 
     /**
-     * リソースを生成し文字列表現として返却する処理を定義するメソッドです。
-     * <p>
-     * このメソッドを定義している {@link JavaComponent} を継承した具象サブクラスは必ずこのメソッドを実装する必要があります。
-     *
-     *
-     * @return 各要素を管理する部品で生成されたJavaリソース
+     * Lombok適用状態
      */
-    public String createResource();
+    @Getter(AccessLevel.PROTECTED)
+    private LombokState lombokState = LombokState.NONE;
+
+    /**
+     * Lombokを適用します。
+     */
+    public void applyLombok() {
+        this.lombokState = LombokState.LOMBOK;
+    }
+
+    /**
+     * JavaコンポーネントがLombokを適用されているか判定します。
+     *
+     * @return JavaコンポーネントがLombokを適用している場合は {@code true} , それ以外は {@code false}
+     */
+    public boolean isLombok() {
+        return this.lombokState == LombokState.LOMBOK;
+    }
 }

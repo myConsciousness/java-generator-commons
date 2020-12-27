@@ -29,8 +29,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Description implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Description extends JavaComponent {
 
     /**
      * 説明

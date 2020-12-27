@@ -29,8 +29,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Interface implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Interface extends JavaComponent {
 
     /**
      * インターフェース名

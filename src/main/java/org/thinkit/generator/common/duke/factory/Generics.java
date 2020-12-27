@@ -32,8 +32,8 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
-public abstract class Generics implements JavaComponent {
+@EqualsAndHashCode(callSuper = false)
+public abstract class Generics extends JavaComponent {
 
     /**
      * 総称型リスト
