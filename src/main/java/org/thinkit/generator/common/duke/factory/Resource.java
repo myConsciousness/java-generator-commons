@@ -48,81 +48,37 @@ public abstract class Resource {
     private Package packageName;
 
     /**
-     * リソース名
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private String resourceName;
-
-    /**
-     * クラスの説明
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private ClassDescription classDescription;
-
-    /**
      * 依存パッケージ
      */
     @Getter(AccessLevel.PROTECTED)
     private List<DependentPackage> dependentPackages;
 
     /**
-     * アノテーションリスト
+     * クラスボディ部
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Annotation> annotations;
+    private ClassBody classBody;
 
     /**
-     * 継承リスト
+     * デフォルトコンストラクタ
      */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Inheritance> inheritances;
-
-    /**
-     * インターフェースリスト
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Interface> interfaces;
-
-    /**
-     * 列挙定数リスト
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Enumeration> enumerations;
-
-    /**
-     * フィールドリスト
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Field> fields;
-
-    /**
-     * コンストラクタリスト
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Constructor> constructors;
-
-    /**
-     * メソッドリスト
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private List<Method> methods;
+    @SuppressWarnings("unused")
+    private Resource() {
+    }
 
     /**
      * コンストラクタ
      *
-     * @param copyright        著作権
-     * @param packageName      パッケージ名
-     * @param classDescription クラスの説明
-     * @param resourceName     リソース名
+     * @param copyright   著作権
+     * @param packageName パッケージ名
+     * @param classBody   クラスボディ部
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected Resource(@NonNull Copyright copyright, @NonNull Package packageName,
-            @NonNull ClassDescription classDescription, @NonNull String resourceName) {
+    protected Resource(@NonNull Copyright copyright, @NonNull Package packageName, @NonNull ClassBody classBody) {
         this.copyright = copyright;
         this.packageName = packageName;
-        this.classDescription = classDescription;
-        this.resourceName = resourceName;
+        this.classBody = classBody;
     }
 
     /**
@@ -140,132 +96,6 @@ public abstract class Resource {
         }
 
         this.dependentPackages.add(dependentPackage);
-        return this;
-    }
-
-    /**
-     * アノテーション定義を追加します。
-     *
-     * @param annotation アノテーション
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Annotation annotation) {
-
-        if (this.annotations == null) {
-            this.annotations = new ArrayList<>(0);
-        }
-
-        this.annotations.add(annotation);
-        return this;
-    }
-
-    /**
-     * 継承定義を追加します。
-     *
-     * @param inheritance 継承
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Inheritance inheritance) {
-
-        if (this.inheritances == null) {
-            this.inheritances = new ArrayList<>(0);
-        }
-
-        this.inheritances.add(inheritance);
-        return this;
-    }
-
-    /**
-     * インターフェース定義を追加します。
-     *
-     * @param _interface インターフェース
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Interface _interface) {
-
-        if (this.interfaces == null) {
-            this.interfaces = new ArrayList<>(0);
-        }
-
-        this.interfaces.add(_interface);
-        return this;
-    }
-
-    /**
-     * Enum定数定義を追加します。
-     *
-     * @param enumeration Enum定数定義
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Enumeration enumeration) {
-
-        if (this.enumerations == null) {
-            this.enumerations = new ArrayList<>(0);
-        }
-
-        this.enumerations.add(enumeration);
-        return this;
-    }
-
-    /**
-     * フィールド定義を追加します。
-     *
-     * @param field フィールド定義
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Field field) {
-
-        if (this.fields == null) {
-            this.fields = new ArrayList<>(0);
-        }
-
-        this.fields.add(field);
-        return this;
-    }
-
-    /**
-     * コンストラクタ定義を追加します。
-     *
-     * @param constructor コンストラクタ定義
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Constructor constructor) {
-
-        if (this.constructors == null) {
-            this.constructors = new ArrayList<>(0);
-        }
-
-        this.constructors.add(constructor);
-        return this;
-    }
-
-    /**
-     * メソッド定義を追加します。
-     *
-     * @param method メソッド定義
-     * @return 自分自身のインスタンス
-     *
-     * @exception NullPointerException 引数として {@code null} が渡された場合
-     */
-    public Resource add(@NonNull Method method) {
-
-        if (this.methods == null) {
-            this.methods = new ArrayList<>(0);
-        }
-
-        this.methods.add(method);
         return this;
     }
 
