@@ -17,6 +17,8 @@ package org.thinkit.generator.common.duke.factory;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.thinkit.generator.common.duke.catalog.LombokState;
+
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -100,6 +102,12 @@ public abstract class Resource {
      */
     @Getter(AccessLevel.PROTECTED)
     private List<Method> methods = new ArrayList<>(0);
+
+    /**
+     * Lombok適用状態
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private LombokState lombokState = LombokState.NONE;
 
     /**
      * コンストラクタ
@@ -208,6 +216,22 @@ public abstract class Resource {
     public Resource add(@NonNull Method method) {
         this.methods.add(method);
         return this;
+    }
+
+    /**
+     * Lombokを適用します。
+     */
+    public void applyLombok() {
+        this.lombokState = LombokState.LOMBOK;
+    }
+
+    /**
+     * Lombokを適用されているか判定します。
+     *
+     * @return Lombokを適用している場合は {@code true} , それ以外は {@code false}
+     */
+    public boolean isAppliedLombok() {
+        return this.lombokState == LombokState.LOMBOK;
     }
 
     /**

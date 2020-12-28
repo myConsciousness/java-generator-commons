@@ -36,7 +36,7 @@ public abstract class JavaComponent implements Component {
     /**
      * Lombokを適用します。
      */
-    public void applyLombok() {
+    protected void applyLombok() {
         this.lombokState = LombokState.LOMBOK;
     }
 
@@ -45,7 +45,7 @@ public abstract class JavaComponent implements Component {
      *
      * @return JavaコンポーネントがLombokを適用している場合は {@code true} , それ以外は {@code false}
      */
-    public boolean isLombok() {
+    protected boolean isAppliedLombok() {
         return this.lombokState == LombokState.LOMBOK;
     }
 }

@@ -76,7 +76,12 @@ public enum Annotation implements BiCatalog<Annotation, String> {
     /**
      * 返却情報
      */
-    RETURN(9, "@return");
+    RETURN(9, "@return"),
+
+    /**
+     * RequiredArgsConstructor (Lombok)
+     */
+    LOMBOK_REQUIRED_ARGS_CONSTRUCTOR(10, "@RequiredArgsConstructor");
 
     /**
      * コード値
