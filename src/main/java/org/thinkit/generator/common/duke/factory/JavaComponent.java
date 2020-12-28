@@ -36,7 +36,7 @@ public abstract class JavaComponent implements Component {
     /**
      * Lombokを適用します。
      */
-    protected void applyLombok() {
+    public void applyLombok() {
         this.lombokState = LombokState.LOMBOK;
     }
 
