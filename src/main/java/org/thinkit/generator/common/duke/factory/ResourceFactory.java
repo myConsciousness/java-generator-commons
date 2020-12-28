@@ -410,17 +410,15 @@ public abstract class ResourceFactory {
      * {@link Resource} のインスタンスを生成し返却する抽象メソッドです。
      * <p>
      * {@link ResourceFactory} を継承した具象クラスは必ず
-     * {@link #createResource(Copyright, Package, ClassDescription, String)}
-     * を実装してください。
+     * {@link #createClassBody(ClassDescription, String)} を実装してください。
      *
-     * @param copyright        著作権
-     * @param packageName      パッケージ名
-     * @param classDescription クラスの説明
-     * @param resourceName     リソース名
+     * @param copyright   著作権
+     * @param packageName パッケージ名
+     * @param classBody   クラスボディ部
      * @return {@link Resource} のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public abstract Resource createResource(@NonNull Copyright copyright, @NonNull Package packageName,
-            @NonNull ClassDescription classDescription, @NonNull String resourceName);
+            @NonNull ClassBody classBody);
 }
