@@ -358,10 +358,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 </tr>
 <tr class="row-color" id="i29">
 <td class="col-first"><code>abstract <a href="Resource.html" title="org.thinkit.generator.common.duke.factory内のクラス">Resource</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createResource(org.thinkit.generator.common.duke.factory.Copyright,org.thinkit.generator.common.duke.factory.Package,org.thinkit.generator.common.duke.factory.ClassDescription,java.lang.String)">createResource</a></span>&#8203;(@NonNull <a href="Copyright.html" title="org.thinkit.generator.common.duke.factory内のクラス">Copyright</a>&nbsp;copyright,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createResource(org.thinkit.generator.common.duke.factory.Copyright,org.thinkit.generator.common.duke.factory.Package,org.thinkit.generator.common.duke.factory.ClassBody)">createResource</a></span>&#8203;(@NonNull <a href="Copyright.html" title="org.thinkit.generator.common.duke.factory内のクラス">Copyright</a>&nbsp;copyright,
 @NonNull <a href="Package.html" title="org.thinkit.generator.common.duke.factory内のクラス">Package</a>&nbsp;packageName,
-@NonNull <a href="ClassDescription.html" title="org.thinkit.generator.common.duke.factory内のクラス">ClassDescription</a>&nbsp;classDescription,
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;resourceName)</code></th>
+@NonNull <a href="ClassBody.html" title="org.thinkit.generator.common.duke.factory内のクラス">ClassBody</a>&nbsp;classBody)</code></th>
 <td class="col-last">
 <div class="block"><a href="Resource.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>Resource</code></a> のインスタンスを生成し返却する抽象メソッドです。</div>
 </td>
@@ -989,27 +988,23 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 </section>
 </li>
 <li>
-<section class="detail" id="createResource(org.thinkit.generator.common.duke.factory.Copyright,org.thinkit.generator.common.duke.factory.Package,org.thinkit.generator.common.duke.factory.ClassDescription,java.lang.String)">
+<section class="detail" id="createResource(org.thinkit.generator.common.duke.factory.Copyright,org.thinkit.generator.common.duke.factory.Package,org.thinkit.generator.common.duke.factory.ClassBody)">
 <h3>createResource</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="Resource.html" title="org.thinkit.generator.common.duke.factory内のクラス">Resource</a></span>&nbsp;<span class="member-name">createResource</span>&#8203;(<span class="parameters">@NonNull
 @NonNull <a href="Copyright.html" title="org.thinkit.generator.common.duke.factory内のクラス">Copyright</a>&nbsp;copyright,
 @NonNull
 @NonNull <a href="Package.html" title="org.thinkit.generator.common.duke.factory内のクラス">Package</a>&nbsp;packageName,
 @NonNull
-@NonNull <a href="ClassDescription.html" title="org.thinkit.generator.common.duke.factory内のクラス">ClassDescription</a>&nbsp;classDescription,
-@NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;resourceName)</span></div>
+@NonNull <a href="ClassBody.html" title="org.thinkit.generator.common.duke.factory内のクラス">ClassBody</a>&nbsp;classBody)</span></div>
 <div class="block"><a href="Resource.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>Resource</code></a> のインスタンスを生成し返却する抽象メソッドです。
  <p>
  <a href="ResourceFactory.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ResourceFactory</code></a> を継承した具象クラスは必ず
- <a href="#createResource(org.thinkit.generator.common.duke.factory.Copyright,org.thinkit.generator.common.duke.factory.Package,org.thinkit.generator.common.duke.factory.ClassDescription,java.lang.String)"><code>createResource(Copyright, Package, ClassDescription, String)</code></a>
- を実装してください。</div>
+ <a href="#createClassBody(org.thinkit.generator.common.duke.factory.ClassDescription,java.lang.String)"><code>createClassBody(ClassDescription, String)</code></a> を実装してください。</div>
 <dl class="notes">
 <dt>パラメータ:</dt>
 <dd><code>copyright</code> - 著作権</dd>
 <dd><code>packageName</code> - パッケージ名</dd>
-<dd><code>classDescription</code> - クラスの説明</dd>
-<dd><code>resourceName</code> - リソース名</dd>
+<dd><code>classBody</code> - クラスボディ部</dd>
 <dt>戻り値:</dt>
 <dd><a href="Resource.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>Resource</code></a> のインスタンス</dd>
 <dt>例外:</dt>
