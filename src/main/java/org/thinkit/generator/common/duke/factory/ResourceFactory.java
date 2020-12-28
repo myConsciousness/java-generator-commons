@@ -394,6 +394,19 @@ public abstract class ResourceFactory {
     public abstract AnnotationParameter createAnnotationParameter(@NonNull String fieldName);
 
     /**
+     * {@link ClassBody} のインスタンスを生成し返却する抽象メソッドです。<br>
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createClassBody(ClassDescription, String)} を実装してください。
+     *
+     * @param classDescription クラスの説明
+     * @param resourceName     リソース名
+     * @return {@link ClassBody} のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public abstract ClassBody createClassBody(@NonNull ClassDescription classDescription, @NonNull String resourceName);
+
+    /**
      * {@link Resource} のインスタンスを生成し返却する抽象メソッドです。
      * <p>
      * {@link ResourceFactory} を継承した具象クラスは必ず
