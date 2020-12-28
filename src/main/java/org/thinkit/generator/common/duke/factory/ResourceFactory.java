@@ -370,6 +370,30 @@ public abstract class ResourceFactory {
     public abstract DependentPackage createDependentPackage(@NonNull String dependentPackage);
 
     /**
+     * {@link Annotation} のインスタンスを生成し返却する抽象メソッドです。<br>
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createAnnotation(AnnotationPattern)} を実装してください。
+     *
+     * @param annotationPattern アノテーションパターン
+     * @return {@link Annotation} のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public abstract Annotation createAnnotation(@NonNull AnnotationPattern annotationPattern);
+
+    /**
+     * {@link AnnotationParameter} のインスタンスを生成し返却する抽象メソッドです。<br>
+     * {@link ResourceFactory} を継承した具象クラスは必ず
+     * {@link #createAnnotationParameter(String)} を実装してください。
+     *
+     * @param fieldName アノテーション引数のフィールド名
+     * @return {@link AnnotationParameter} のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public abstract AnnotationParameter createAnnotationParameter(@NonNull String fieldName);
+
+    /**
      * {@link Resource} のインスタンスを生成し返却する抽象メソッドです。
      * <p>
      * {@link ResourceFactory} を継承した具象クラスは必ず

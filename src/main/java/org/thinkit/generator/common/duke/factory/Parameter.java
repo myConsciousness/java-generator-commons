@@ -14,6 +14,9 @@
 
 package org.thinkit.generator.common.duke.factory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -45,6 +48,12 @@ public abstract class Parameter extends JavaComponent {
     private String variableName;
 
     /**
+     * アノテーションリスト
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private List<Annotation> annotations;
+
+    /**
      * デフォルトコンストラクタ
      */
     @SuppressWarnings("unused")
@@ -61,5 +70,23 @@ public abstract class Parameter extends JavaComponent {
     protected Parameter(@NonNull String dataType, @NonNull String variableName) {
         this.dataType = dataType;
         this.variableName = variableName;
+    }
+
+    /**
+     * アノテーション定義を追加します。
+     *
+     * @param annotation アノテーション
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public Parameter add(@NonNull Annotation annotation) {
+
+        if (this.annotations == null) {
+            this.annotations = new ArrayList<>(0);
+        }
+
+        this.annotations.add(annotation);
+        return this;
     }
 }

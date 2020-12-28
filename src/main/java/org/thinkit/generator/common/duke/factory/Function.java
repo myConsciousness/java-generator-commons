@@ -54,14 +54,14 @@ public abstract class Function extends JavaComponent {
      * 引数リスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Parameter> parameters = new ArrayList<>(0);
+    private List<Parameter> parameters;
 
     /**
      * 処理リスト
      */
     @NonNull
     @Getter(AccessLevel.PROTECTED)
-    private List<Process> processes = new ArrayList<>(0);
+    private List<Process> processes;
 
     /**
      * デフォルトコンストラクタ
@@ -92,6 +92,11 @@ public abstract class Function extends JavaComponent {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public void add(@NonNull Parameter parameter) {
+
+        if (this.parameters == null) {
+            this.parameters = new ArrayList<>(0);
+        }
+
         this.parameters.add(parameter);
     }
 
@@ -103,6 +108,11 @@ public abstract class Function extends JavaComponent {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public void add(@NonNull Process process) {
+
+        if (this.processes == null) {
+            this.processes = new ArrayList<>(0);
+        }
+
         this.processes.add(process);
     }
 

@@ -14,7 +14,12 @@
 
 package org.thinkit.generator.common.duke.factory;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
 
@@ -29,6 +34,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 public abstract class Constructor extends Function {
+
+    /**
+     * アノテーションリスト
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private List<Annotation> annotations;
 
     /**
      * コンストラクタ
@@ -48,5 +59,23 @@ public abstract class Constructor extends Function {
      */
     public void add(@NonNull DescriptionTag descriptionTag) {
         super.getFunctionDescription().add(descriptionTag);
+    }
+
+    /**
+     * アノテーション定義を追加します。
+     *
+     * @param annotation アノテーション
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public Constructor add(@NonNull Annotation annotation) {
+
+        if (this.annotations == null) {
+            this.annotations = new ArrayList<>(0);
+        }
+
+        this.annotations.add(annotation);
+        return this;
     }
 }

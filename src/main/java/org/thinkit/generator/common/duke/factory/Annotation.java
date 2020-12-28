@@ -14,6 +14,7 @@
 
 package org.thinkit.generator.common.duke.factory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.thinkit.generator.common.duke.catalog.AnnotationPattern;
@@ -43,6 +44,7 @@ public abstract class Annotation extends JavaComponent {
     /**
      * アノテーション引数リスト
      */
+    @Getter(AccessLevel.PROTECTED)
     private List<AnnotationParameter> annotationParameters;
 
     /**
@@ -55,14 +57,29 @@ public abstract class Annotation extends JavaComponent {
     /**
      * コンストラクタ
      *
-     * @param annotationPattern    アノテーションパターン
-     * @param annotationParameters アノテーション引数
+     * @param annotationPattern アノテーションパターン
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected Annotation(@NonNull AnnotationPattern annotationPattern,
-            @NonNull List<AnnotationParameter> annotationParameters) {
+    protected Annotation(@NonNull AnnotationPattern annotationPattern) {
         this.annotationPattern = annotationPattern;
-        this.annotationParameters = annotationParameters;
+    }
+
+    /**
+     * アノテーション引数を追加します。
+     *
+     * @param annotationParameter アノテーション引数
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public Annotation add(@NonNull AnnotationParameter annotationParameter) {
+
+        if (this.annotationParameters == null) {
+            this.annotationParameters = new ArrayList<>(0);
+        }
+
+        this.annotationParameters.add(annotationParameter);
+        return this;
     }
 }

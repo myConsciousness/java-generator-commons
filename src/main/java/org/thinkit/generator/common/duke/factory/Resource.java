@@ -65,43 +65,49 @@ public abstract class Resource {
      * 依存パッケージ
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<DependentPackage> dependentPackages = new ArrayList<>(0);
+    private List<DependentPackage> dependentPackages;
+
+    /**
+     * アノテーションリスト
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private List<Annotation> annotations;
 
     /**
      * 継承リスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Inheritance> inheritances = new ArrayList<>(0);
+    private List<Inheritance> inheritances;
 
     /**
      * インターフェースリスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Interface> interfaces = new ArrayList<>(0);
+    private List<Interface> interfaces;
 
     /**
      * 列挙定数リスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Enumeration> enumerations = new ArrayList<>(0);
+    private List<Enumeration> enumerations;
 
     /**
      * フィールドリスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Field> fields = new ArrayList<>(0);
+    private List<Field> fields;
 
     /**
      * コンストラクタリスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Constructor> constructors = new ArrayList<>(0);
+    private List<Constructor> constructors;
 
     /**
      * メソッドリスト
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Method> methods = new ArrayList<>(0);
+    private List<Method> methods;
 
     /**
      * Lombok適用状態
@@ -136,7 +142,30 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull DependentPackage dependentPackage) {
+
+        if (this.dependentPackages == null) {
+            this.dependentPackages = new ArrayList<>(0);
+        }
+
         this.dependentPackages.add(dependentPackage);
+        return this;
+    }
+
+    /**
+     * アノテーション定義を追加します。
+     *
+     * @param annotation アノテーション
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public Resource add(@NonNull Annotation annotation) {
+
+        if (this.annotations == null) {
+            this.annotations = new ArrayList<>(0);
+        }
+
+        this.annotations.add(annotation);
         return this;
     }
 
@@ -149,6 +178,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Inheritance inheritance) {
+
+        if (this.inheritances == null) {
+            this.inheritances = new ArrayList<>(0);
+        }
+
         this.inheritances.add(inheritance);
         return this;
     }
@@ -162,6 +196,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Interface _interface) {
+
+        if (this.interfaces == null) {
+            this.interfaces = new ArrayList<>(0);
+        }
+
         this.interfaces.add(_interface);
         return this;
     }
@@ -175,6 +214,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Enumeration enumeration) {
+
+        if (this.enumerations == null) {
+            this.enumerations = new ArrayList<>(0);
+        }
+
         this.enumerations.add(enumeration);
         return this;
     }
@@ -188,6 +232,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Field field) {
+
+        if (this.fields == null) {
+            this.fields = new ArrayList<>(0);
+        }
+
         this.fields.add(field);
         return this;
     }
@@ -201,6 +250,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Constructor constructor) {
+
+        if (this.constructors == null) {
+            this.constructors = new ArrayList<>(0);
+        }
+
         this.constructors.add(constructor);
         return this;
     }
@@ -214,6 +268,11 @@ public abstract class Resource {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public Resource add(@NonNull Method method) {
+
+        if (this.methods == null) {
+            this.methods = new ArrayList<>(0);
+        }
+
         this.methods.add(method);
         return this;
     }

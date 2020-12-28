@@ -14,6 +14,9 @@
 
 package org.thinkit.generator.common.duke.factory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.thinkit.generator.common.duke.catalog.Modifier;
 
 import lombok.AccessLevel;
@@ -47,6 +50,12 @@ public abstract class Method extends Function {
     private String returnType;
 
     /**
+     * アノテーションリスト
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private List<Annotation> annotations;
+
+    /**
      * コンストラクタ
      *
      * @param modifier            アクセス修飾子
@@ -71,5 +80,23 @@ public abstract class Method extends Function {
      */
     public void add(@NonNull DescriptionTag descriptionTag) {
         super.getFunctionDescription().add(descriptionTag);
+    }
+
+    /**
+     * アノテーション定義を追加します。
+     *
+     * @param annotation アノテーション
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public Method add(@NonNull Annotation annotation) {
+
+        if (this.annotations == null) {
+            this.annotations = new ArrayList<>(0);
+        }
+
+        this.annotations.add(annotation);
+        return this;
     }
 }
