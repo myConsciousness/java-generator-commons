@@ -126,7 +126,7 @@ public abstract class Function extends JavaComponent {
 
         final List<Parameter> parameters = this.getParameters();
 
-        if (parameters.isEmpty()) {
+        if (parameters == null) {
             return "";
         }
 
@@ -153,7 +153,7 @@ public abstract class Function extends JavaComponent {
 
         final List<Process> processes = this.getProcesses();
 
-        if (processes.isEmpty()) {
+        if (processes == null) {
             return "";
         }
 

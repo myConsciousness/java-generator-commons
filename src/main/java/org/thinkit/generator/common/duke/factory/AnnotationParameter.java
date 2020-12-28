@@ -71,7 +71,6 @@ public abstract class AnnotationParameter extends JavaComponent {
      */
     protected AnnotationParameter(@NonNull String fieldName) {
         this.fieldName = fieldName;
-        this.parameters = new ArrayList<>(0);
     }
 
     /**
@@ -83,6 +82,11 @@ public abstract class AnnotationParameter extends JavaComponent {
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     public AnnotationParameter add(@NonNull Object parameter) {
+
+        if (this.parameters == null) {
+            this.parameters = new ArrayList<>(0);
+        }
+
         this.parameters.add(parameter);
         return this;
     }
@@ -110,12 +114,12 @@ public abstract class AnnotationParameter extends JavaComponent {
         return switch (this.annotationParameterType) {
             case DEFAULT -> {
 
-                if (this.parameters.size() > 1) {
-                    throw new IllegalStateException();
+                if (this.parameters == null) {
+                    yield "";
                 }
 
-                if (this.parameters.isEmpty()) {
-                    yield "";
+                if (this.parameters.size() > 1) {
+                    throw new IllegalStateException();
                 }
 
                 yield this.toString(this.parameters.get(0));
@@ -123,7 +127,7 @@ public abstract class AnnotationParameter extends JavaComponent {
 
             case ARRAY -> {
 
-                if (this.parameters.isEmpty()) {
+                if (this.parameters == null) {
                     yield "{}";
                 }
 
