@@ -20,13 +20,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * クラスで使用するアノテーションを管理するカタログです。
+ * クラスで使用するアノテーションパターンを管理するカタログです。
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @RequiredArgsConstructor
-public enum Annotation implements BiCatalog<Annotation, String> {
+public enum AnnotationPattern implements BiCatalog<AnnotationPattern, String> {
 
     /**
      * 作成者

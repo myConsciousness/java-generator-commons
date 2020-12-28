@@ -14,7 +14,7 @@
 
 package org.thinkit.generator.common.duke.factory;
 
-import org.thinkit.generator.common.duke.catalog.Annotation;
+import org.thinkit.generator.common.duke.catalog.AnnotationPattern;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -50,7 +50,7 @@ public abstract class DescriptionTag extends JavaComponent {
      * アノテーション
      */
     @Getter(AccessLevel.PROTECTED)
-    private Annotation annotation;
+    private AnnotationPattern annotationPattern;
 
     /**
      * デフォルトコンストラクタ
@@ -75,16 +75,16 @@ public abstract class DescriptionTag extends JavaComponent {
     /**
      * コンストラクタ
      *
-     * @param variableName 変数名
-     * @param description  説明
-     * @param annotation   アノテーション
+     * @param variableName      変数名
+     * @param description       説明
+     * @param annotationPattern アノテーションパターン
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
     protected DescriptionTag(@NonNull String variableName, @NonNull String description,
-            @NonNull Annotation annotation) {
+            @NonNull AnnotationPattern annotationPattern) {
         this.variableName = variableName;
         this.description = description;
-        this.annotation = annotation;
+        this.annotationPattern = annotationPattern;
     }
 }
