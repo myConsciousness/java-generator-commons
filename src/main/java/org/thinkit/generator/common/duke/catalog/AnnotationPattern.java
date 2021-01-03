@@ -101,7 +101,7 @@ public enum AnnotationPattern implements BiCatalog<AnnotationPattern, String> {
     /**
      * Builder Default (Lombok)
      */
-    LOMBOK_BUILDER_DEFAULT(13, "@Builder.Default");
+    LOMBOK_BUILDER_DEFAULT(14, "@Builder.Default");
 
     /**
      * コード値
