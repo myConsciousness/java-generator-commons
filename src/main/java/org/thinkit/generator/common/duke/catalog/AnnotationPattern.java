@@ -81,7 +81,27 @@ public enum AnnotationPattern implements BiCatalog<AnnotationPattern, String> {
     /**
      * RequiredArgsConstructor (Lombok)
      */
-    LOMBOK_REQUIRED_ARGS_CONSTRUCTOR(10, "@RequiredArgsConstructor");
+    LOMBOK_REQUIRED_ARGS_CONSTRUCTOR(10, "@RequiredArgsConstructor"),
+
+    /**
+     * AllArgsConstructor (Lombok)
+     */
+    LOMBOK_ALL_ARGS_CONSTRUCTOR(11, "@AllArgsConstructor"),
+
+    /**
+     * AllNoConstructor (Lombok)
+     */
+    LOMBOK_NO_ARGS_CONSTRUCTOR(12, "@AllNoConstructor"),
+
+    /**
+     * Builder (Lombok)
+     */
+    LOMBOK_BUILDER(13, "@Builder"),
+
+    /**
+     * Builder Default (Lombok)
+     */
+    LOMBOK_BUILDER_DEFAULT(13, "@Builder.Default");
 
     /**
      * コード値
