@@ -99,4 +99,18 @@ public abstract class Method extends Function {
         this.annotations.add(annotation);
         return this;
     }
+
+    /**
+     * アクセス修飾子に応じてアクセスレベルを表現する文字列を返却します。
+     *
+     * @return アクセス修飾子を表現する文字列
+     */
+    protected String getAccessLevel() {
+        return switch (this.getModifier()) {
+            case PUBLIC -> "public";
+            case PROTECTED -> "protected";
+            case PRIVATE -> "private";
+            case PACKAGE, NONE -> "";
+        };
+    }
 }
