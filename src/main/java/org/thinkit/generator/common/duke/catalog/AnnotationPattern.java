@@ -101,7 +101,67 @@ public enum AnnotationPattern implements BiCatalog<AnnotationPattern, String> {
     /**
      * Builder Default (Lombok)
      */
-    LOMBOK_BUILDER_DEFAULT(14, "@Builder.Default");
+    LOMBOK_BUILDER_DEFAULT(14, "@Builder.Default"),
+
+    /**
+     * Require Non Null (Envali)
+     */
+    ENVALI_REQUIRE_NON_NULL(15, "@RequireNonNull"),
+
+    /**
+     * Require Non Blank (Envali)
+     */
+    ENVALI_REQUIRE_NON_BLANK(16, "@RequireNonBlank"),
+
+    /**
+     * Require Positive (Envali)
+     */
+    ENVALI_REQUIRE_POSITIVE(17, "@RequirePositive"),
+
+    /**
+     * Require Negative (Envali)
+     */
+    ENVALI_REQUIRE_NEGATIVE(18, "@RequireNegative"),
+
+    /**
+     * Require Range From (Envali)
+     */
+    ENVALI_REQUIRE_RANGE_FROM(19, "@RequireRangeFrom"),
+
+    /**
+     * Require Range To (Envali)
+     */
+    ENVALI_REQUIRE_RANGE_TO(20, "@RequireRangeTo"),
+
+    /**
+     * Require Range From To (Envali)
+     */
+    ENVALI_REQUIRE_RANGE_FROM_TO(21, "@RequireRangeFromTo"),
+
+    /**
+     * Require Start With (Envali)
+     */
+    ENVALI_REQUIRE_START_WITH(22, "@RequireStartWith"),
+
+    /**
+     * Require End With (Envali)
+     */
+    ENVALI_REQUIRE_END_WITH(23, "@RequireEndWith"),
+
+    /**
+     * Require Non Empty (Envali)
+     */
+    ENVALI_REQUIRE_NON_EMPTY(24, "@RequireNonEmpty"),
+
+    /**
+     * Nested Entity (Envali)
+     */
+    ENVALI_NESTED_ENTITY(25, "@NestedEntity"),
+
+    /**
+     * Require Match (Envali)
+     */
+    ENVALI_REQUIRE_MATCH(26, "@RequireMatch");
 
     /**
      * コード値
