@@ -91,6 +91,34 @@ public abstract class EnumDefinition extends JavaComponent {
      * {@link #add(Object)} メソッドで設定された列挙子固有の値を実際のソースコードで解析可能な文字列に変換し返却します。
      * 列挙子固有の値が設定されなかった場合は必ず空文字列を返却します。
      * <p>
+     * 参考に以下の例を提示します。
+     *
+     * <pre>
+     * 列挙子の値が1つ設定されている場合:
+     * <code>
+     * getCodeValue();
+     * >> {@code "test"}
+     * </code>
+     * </pre>
+     *
+     * <pre>
+     * 列挙子の値が複数設定されている場合（文字列型とその他のデータ型）:
+     * <code>
+     * getCodeValue();
+     * >> {@code "test, 10, true"}
+     * </code>
+     * </pre>
+     *
+     * @return ソースコードで解析可能な形式に変換された列挙子の値
+     */
+    protected String getCodeValue() {
+        return this.getCodeValue(false);
+    }
+
+    /**
+     * {@link #add(Object)} メソッドで設定された列挙子固有の値を実際のソースコードで解析可能な文字列に変換し返却します。
+     * 列挙子固有の値が設定されなかった場合は必ず空文字列を返却します。
+     * <p>
      * {@link #add(Object)} メソッドで追加された際の値のデータ型を基に値の変換を行います。設定された値が文字列型であれば
      * {@code ""} を値の前後に付加し、文字列型以外の場合は設定されたそのままの値を {@link String#valueOf(Object)}
      * メソッドで文字列に変換します。例えば、 {@link #add(Object)} メソッドで {@code "test"} が引数として渡された場合、
@@ -101,7 +129,7 @@ public abstract class EnumDefinition extends JavaComponent {
      * <pre>
      * 列挙子の値が1つ設定されている場合:
      * <code>
-     * getCodeValue();
+     * getCodeValueWithQuotes();
      * >> {@code "\"test\""}
      * </code>
      * </pre>
@@ -109,20 +137,31 @@ public abstract class EnumDefinition extends JavaComponent {
      * <pre>
      * 列挙子の値が複数設定されている場合（文字列型とその他のデータ型）:
      * <code>
-     * getCodeValue();
+     * getCodeValueWithQuotes();
      * >> {@code "\"test\", 10, true"}
      * </code>
      * </pre>
      *
      * @return ソースコードで解析可能な形式に変換された列挙子の値
      */
-    protected String getCodeValue() {
+    protected String getCodeValueWithQuotes() {
+        return this.getCodeValue(true);
+    }
+
+    /**
+     * {@link #add(Object)} メソッドで設定された列挙子固有の値を実際のソースコードで解析可能な文字列に変換し返却します。
+     * 列挙子固有の値が設定されなかった場合は必ず空文字列を返却します。
+     *
+     * @param withQuotes クォーテーションの付与可否
+     * @return ソースコードで解析可能な形式に変換された列挙子の値
+     */
+    private String getCodeValue(boolean withQuotes) {
 
         if (this.values.isEmpty()) {
             return "";
         }
 
-        return String.join(CODE_VALUE_DELIMITER, this.toCodeValues());
+        return String.join(CODE_VALUE_DELIMITER, this.toCodeValues(withQuotes));
     }
 
     /**
@@ -130,10 +169,11 @@ public abstract class EnumDefinition extends JavaComponent {
      * メソッドで設定された列挙子の値リストを文字列型のリストに変換します。設定された任意のデータ型の値を文字列型へ変換する際に
      * {@link #toCode(Object)} メソッドを使用し実際のソースコードで解析可能な形式へ変換します。
      *
+     * @param withQuotes クォーテーションの付与可否
      * @return 文字列型へ変換された値のリスト
      */
-    private List<String> toCodeValues() {
-        return this.values.stream().map(this::toCode).collect(Collectors.toList());
+    private List<String> toCodeValues(boolean withQuotes) {
+        return this.values.stream().map(value -> this.toCode(value, withQuotes)).collect(Collectors.toList());
     }
 
     /**
@@ -143,17 +183,20 @@ public abstract class EnumDefinition extends JavaComponent {
      * を値の前後に付与します。また、引数として渡された値が {@link Character} クラスのインスタンスを持つ場合は {@code "'"}
      * を値の前後に付与します。
      *
-     * @param value 任意のデータ型の値
+     * @param value      任意のデータ型の値
+     * @param withQuotes クォーテーションの付与可否
      * @return ソースコードで解析可能な形式に変換された文字列型の値
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    private String toCode(@NonNull Object value) {
+    private String toCode(@NonNull Object value, boolean withQuotes) {
 
-        if (value instanceof String) {
-            return String.format("\"%s\"", String.valueOf(value));
-        } else if (value instanceof Character) {
-            return String.format("'%s'", String.valueOf(value));
+        if (withQuotes) {
+            if (value instanceof String) {
+                return String.format("\"%s\"", String.valueOf(value));
+            } else if (value instanceof Character) {
+                return String.format("'%s'", String.valueOf(value));
+            }
         }
 
         return String.valueOf(value);

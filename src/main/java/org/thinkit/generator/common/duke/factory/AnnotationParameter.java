@@ -111,6 +111,34 @@ public abstract class AnnotationParameter extends JavaComponent {
      *                                  でかつ複数のパラメーターが設定されていた場合
      */
     protected String createParameter() {
+        return this.createParameter(false);
+    }
+
+    /**
+     * インスタンスの生成時に渡された情報を基にアノテーションの引数を表現する文字列を生成し返却します。この
+     * {@link #createParameterWithQuotes()} メソッドから取得する文字列にはクォーテーションが付与されます。
+     *
+     * @return アノテーションの引数を表現する文字列
+     *
+     * @exception IllegalStateException アノテーションの引数種別が
+     *                                  {@link AnnotationParameterType#DEFAULT}
+     *                                  でかつ複数のパラメーターが設定されていた場合
+     */
+    protected String createParameterWithQuotes() {
+        return this.createParameter(true);
+    }
+
+    /**
+     * インスタンスの生成時に渡された情報を基にアノテーションの引数を表現する文字列を生成し返却します。
+     *
+     * @param withQuotes 返却する引数に対するクォーテーションの可否
+     * @return アノテーションの引数を表現する文字列
+     *
+     * @exception IllegalStateException アノテーションの引数種別が
+     *                                  {@link AnnotationParameterType#DEFAULT}
+     *                                  でかつ複数のパラメーターが設定されていた場合
+     */
+    private String createParameter(boolean withQuotes) {
         return switch (this.annotationParameterType) {
             case DEFAULT -> {
 
@@ -122,7 +150,7 @@ public abstract class AnnotationParameter extends JavaComponent {
                     throw new IllegalStateException();
                 }
 
-                yield this.toString(this.parameters.get(0));
+                yield this.toString(this.parameters.get(0), withQuotes);
             }
 
             case ARRAY -> {
@@ -135,7 +163,7 @@ public abstract class AnnotationParameter extends JavaComponent {
                 final String comma = Delimiter.comma();
 
                 this.parameters.forEach(parameter -> {
-                    parameters.append(this.toString(parameter));
+                    parameters.append(this.toString(parameter, withQuotes));
                     parameters.append(comma);
                 });
 
@@ -159,12 +187,14 @@ public abstract class AnnotationParameter extends JavaComponent {
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    private String toString(@NonNull Object object) {
+    private String toString(@NonNull Object object, boolean withQuotes) {
 
-        if (object instanceof String) {
-            return String.format("\"%s\"", String.valueOf(object));
-        } else if (object instanceof Character) {
-            return String.format("'%s'", String.valueOf(object));
+        if (withQuotes) {
+            if (object instanceof String) {
+                return String.format("\"%s\"", String.valueOf(object));
+            } else if (object instanceof Character) {
+                return String.format("'%s'", String.valueOf(object));
+            }
         }
 
         return String.valueOf(object);
