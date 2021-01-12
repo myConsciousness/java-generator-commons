@@ -33,7 +33,7 @@ import lombok.ToString;
  * {@link JavaComponent#createResource()} を実装してください。
  * <p>
  * 列挙子に固有の値を設定したい場合は {@link EnumDefinition} クラスのインスタンスを生成した後に
- * {@link #add(Object)} メソッドを呼び出してください。
+ * {@link #put(Class, Object)} メソッドを呼び出してください。
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -76,7 +76,7 @@ public abstract class EnumDefinition extends JavaComponent {
     }
 
     /**
-     * 引数として渡された値を列挙子に設定する値として追加します。この {@link #add(Object)}
+     * 引数として渡された値を列挙子に設定する値として追加します。この {@link #put(Class, Object)}
      * メソッドは自分自身のインスタンスを返却するため、メソッドチェーンの形式で後続の処理を行うことが可能です。
      *
      * @param clazz 引数のクラスオブジェクト
@@ -85,18 +85,18 @@ public abstract class EnumDefinition extends JavaComponent {
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public EnumDefinition put(@NonNull Class<?> clazz, @NonNull Object parameter) {
+    public EnumDefinition put(@NonNull Class<?> clazz, @NonNull Object value) {
 
         if (this.values == null) {
             this.values = new ArrayList<>(0);
         }
 
-        this.values.add(Map.of(clazz, parameter));
+        this.values.add(Map.of(clazz, value));
         return this;
     }
 
     /**
-     * {@link #add(Object)} メソッドで設定された列挙子固有の値を実際のソースコードで解析可能な文字列に変換し返却します。
+     * {@link #put(Class, Object)} メソッドで設定された列挙子固有の値を実際のソースコードで解析可能な文字列に変換し返却します。
      * 列挙子固有の値が設定されなかった場合は必ず空文字列を返却します。
      * <p>
      * 参考に以下の例を提示します。
@@ -129,9 +129,9 @@ public abstract class EnumDefinition extends JavaComponent {
     }
 
     /**
-     * {@link #add(Object)}
+     * {@link #put(Class, Object)}
      * メソッドで設定された列挙子の値リストを文字列型のリストに変換します。設定された任意のデータ型の値を文字列型へ変換する際に
-     * {@link #toCode(Object)} メソッドを使用し実際のソースコードで解析可能な形式へ変換します。
+     * {@link #toCode(Map)} メソッドを使用し実際のソースコードで解析可能な形式へ変換します。
      *
      * @return 文字列型へ変換された値のリスト
      */
