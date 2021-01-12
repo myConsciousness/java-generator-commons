@@ -171,9 +171,9 @@ public abstract class AnnotationParameter extends JavaComponent {
 
         for (final Entry<ParameterDataType, Object> entry : parameter.entrySet()) {
             return switch (entry.getKey()) {
-                case STRING -> String.format("\"%s\"", String.valueOf(entry.getKey()));
-                case CHARACTER -> String.format("'%s'", String.valueOf(entry.getKey()));
-                case DEFAULT -> String.valueOf(entry.getKey());
+                case STRING -> String.format("\"%s\"", String.valueOf(entry.getValue()));
+                case CHARACTER -> String.format("'%s'", String.valueOf(entry.getValue()));
+                case DEFAULT -> String.valueOf(entry.getValue());
             };
         }
 
