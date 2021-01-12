@@ -15,6 +15,7 @@
 package org.thinkit.generator.common.duke.factory;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -22,6 +23,7 @@ import java.util.Map.Entry;
 import org.thinkit.common.catalog.Brace;
 import org.thinkit.common.catalog.Delimiter;
 import org.thinkit.generator.common.duke.catalog.AnnotationParameterType;
+import org.thinkit.generator.common.duke.catalog.ParameterDataType;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -49,7 +51,7 @@ public abstract class AnnotationParameter extends JavaComponent {
      * 引数マップ
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Map<Class<?>, Object>> parameters;
+    private List<Map<ParameterDataType, Object>> parameters;
 
     /**
      * アノテーション引数の種別
@@ -78,19 +80,22 @@ public abstract class AnnotationParameter extends JavaComponent {
     /**
      * 引数を追加します。
      *
-     * @param clazz     引数のクラスオブジェクト
-     * @param parameter 引数
+     * @param parameterDataType 引数のデータ型
+     * @param parameter         引数
      * @return 自分自身のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public AnnotationParameter put(@NonNull Class<?> clazz, @NonNull Object parameter) {
+    public AnnotationParameter put(@NonNull ParameterDataType parameterDataType, @NonNull Object parameter) {
 
         if (this.parameters == null) {
             this.parameters = new ArrayList<>(0);
         }
 
-        this.parameters.add(Map.of(clazz, parameter));
+        final Map<ParameterDataType, Object> annotationParameter = new EnumMap<>(ParameterDataType.class);
+        annotationParameter.put(parameterDataType, parameter);
+
+        this.parameters.add(annotationParameter);
         return this;
     }
 
@@ -162,18 +167,14 @@ public abstract class AnnotationParameter extends JavaComponent {
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    private String toString(@NonNull Map<Class<?>, Object> parameter) {
+    private String toString(@NonNull Map<ParameterDataType, Object> parameter) {
 
-        for (final Entry<Class<?>, Object> entry : parameter.entrySet()) {
-            final Class<?> clazz = entry.getKey();
-
-            if (clazz.equals(String.class)) {
-                return String.format("\"%s\"", String.valueOf(entry.getKey()));
-            } else if (clazz.equals(Character.class)) {
-                return String.format("'%s'", String.valueOf(entry.getKey()));
-            } else {
-                return String.valueOf(entry.getKey());
-            }
+        for (final Entry<ParameterDataType, Object> entry : parameter.entrySet()) {
+            return switch (entry.getKey()) {
+                case STRING -> String.format("\"%s\"", String.valueOf(entry.getKey()));
+                case CHARACTER -> String.format("'%s'", String.valueOf(entry.getKey()));
+                case DEFAULT -> String.valueOf(entry.getKey());
+            };
         }
 
         // it doesn't happen

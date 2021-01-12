@@ -15,10 +15,13 @@
 package org.thinkit.generator.common.duke.factory;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
+
+import org.thinkit.generator.common.duke.catalog.ParameterDataType;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -57,7 +60,7 @@ public abstract class EnumDefinition extends JavaComponent {
      * 引数マップ
      */
     @Getter(AccessLevel.PROTECTED)
-    private List<Map<Class<?>, Object>> values;
+    private List<Map<ParameterDataType, Object>> values;
 
     /**
      * デフォルトコンストラクタ
@@ -79,19 +82,22 @@ public abstract class EnumDefinition extends JavaComponent {
      * 引数として渡された値を列挙子に設定する値として追加します。この {@link #put(Class, Object)}
      * メソッドは自分自身のインスタンスを返却するため、メソッドチェーンの形式で後続の処理を行うことが可能です。
      *
-     * @param clazz 引数のクラスオブジェクト
-     * @param value 列挙子固有の値をとして設定する任意の型の値
+     * @param parameterDataType 引数のデータ型
+     * @param value             列挙子固有の値をとして設定する任意の型の値
      * @return 自分自身のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public EnumDefinition put(@NonNull Class<?> clazz, @NonNull Object value) {
+    public EnumDefinition put(@NonNull ParameterDataType parameterDataType, @NonNull Object value) {
 
         if (this.values == null) {
             this.values = new ArrayList<>(0);
         }
 
-        this.values.add(Map.of(clazz, value));
+        final Map<ParameterDataType, Object> enumParameter = new EnumMap<>(ParameterDataType.class);
+        enumParameter.put(parameterDataType, value);
+
+        this.values.add(enumParameter);
         return this;
     }
 
@@ -151,18 +157,14 @@ public abstract class EnumDefinition extends JavaComponent {
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    private String toCode(@NonNull Map<Class<?>, Object> value) {
+    private String toCode(@NonNull Map<ParameterDataType, Object> value) {
 
-        for (final Entry<Class<?>, Object> entry : value.entrySet()) {
-            final Class<?> clazz = entry.getKey();
-
-            if (clazz.equals(String.class)) {
-                return String.format("\"%s\"", String.valueOf(entry.getKey()));
-            } else if (clazz.equals(Character.class)) {
-                return String.format("'%s'", String.valueOf(entry.getKey()));
-            } else {
-                return String.valueOf(entry.getKey());
-            }
+        for (final Entry<ParameterDataType, Object> entry : value.entrySet()) {
+            return switch (entry.getKey()) {
+                case STRING -> String.format("\"%s\"", String.valueOf(entry.getKey()));
+                case CHARACTER -> String.format("'%s'", String.valueOf(entry.getKey()));
+                case DEFAULT -> String.valueOf(entry.getKey());
+            };
         }
 
         // it doesn't happen
