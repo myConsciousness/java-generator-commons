@@ -36,7 +36,7 @@ import lombok.ToString;
  * {@link JavaComponent#createResource()} を実装してください。
  * <p>
  * 列挙子に固有の値を設定したい場合は {@link EnumDefinition} クラスのインスタンスを生成した後に
- * {@link #put(Class, Object)} メソッドを呼び出してください。
+ * {@link #put(ParameterDataType, Object)} メソッドを呼び出してください。
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -79,7 +79,7 @@ public abstract class EnumDefinition extends JavaComponent {
     }
 
     /**
-     * 引数として渡された値を列挙子に設定する値として追加します。この {@link #put(Class, Object)}
+     * 引数として渡された値を列挙子に設定する値として追加します。この {@link #put(ParameterDataType, Object)}
      * メソッドは自分自身のインスタンスを返却するため、メソッドチェーンの形式で後続の処理を行うことが可能です。
      *
      * @param parameterDataType 引数のデータ型
