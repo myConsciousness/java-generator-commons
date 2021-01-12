@@ -94,7 +94,7 @@ extends <a href="JavaComponent.html" title="org.thinkit.generator.common.duke.fa
  <a href="Component.html#createResource()"><code>Component.createResource()</code></a> を実装してください。
  <p>
  列挙子に固有の値を設定したい場合は <a href="EnumDefinition.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>EnumDefinition</code></a> クラスのインスタンスを生成した後に
- <a href="#add(java.lang.Object)"><code>add(Object)</code></a> メソッドを呼び出してください。</div>
+ <a href="#put(java.lang.Class,java.lang.Object)"><code>put(Class, Object)</code></a> メソッドを呼び出してください。</div>
 <dl class="notes">
 <dt>導入されたバージョン:</dt>
 <dd>1.0.0</dd>
@@ -119,21 +119,22 @@ extends <a href="JavaComponent.html" title="org.thinkit.generator.common.duke.fa
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
-<td class="col-first"><code><a href="EnumDefinition.html" title="org.thinkit.generator.common.duke.factory内のクラス">EnumDefinition</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#add(java.lang.Object)">add</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&nbsp;value)</code></th>
-<td class="col-last">
-<div class="block">引数として渡された値を列挙子に設定する値として追加します。</div>
-</td>
-</tr>
-<tr class="row-color" id="i1">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&nbsp;o)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i2">
+<tr class="row-color" id="i1">
 <td class="col-first"><code>int</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
+</tr>
+<tr class="alt-color" id="i2">
+<td class="col-first"><code><a href="EnumDefinition.html" title="org.thinkit.generator.common.duke.factory内のクラス">EnumDefinition</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#put(java.lang.Class,java.lang.Object)">put</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Class.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz,
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&nbsp;value)</code></th>
+<td class="col-last">
+<div class="block">引数として渡された値を列挙子に設定する値として追加します。</div>
+</td>
 </tr>
 <tr class="row-color" id="i3">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a></code></td>
@@ -165,14 +166,17 @@ extends <a href="JavaComponent.html" title="org.thinkit.generator.common.duke.fa
 <h2>メソッドの詳細</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="add(java.lang.Object)">
-<h3>add</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EnumDefinition.html" title="org.thinkit.generator.common.duke.factory内のクラス">EnumDefinition</a></span>&nbsp;<span class="member-name">add</span>&#8203;(<span class="parameters">@NonNull
+<section class="detail" id="put(java.lang.Class,java.lang.Object)">
+<h3>put</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="EnumDefinition.html" title="org.thinkit.generator.common.duke.factory内のクラス">EnumDefinition</a></span>&nbsp;<span class="member-name">put</span>&#8203;(<span class="parameters">@NonNull
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Class.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Class</a>&lt;?&gt;&nbsp;clazz,
+@NonNull
 @NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&nbsp;value)</span></div>
-<div class="block">引数として渡された値を列挙子に設定する値として追加します。この <a href="#add(java.lang.Object)"><code>add(Object)</code></a>
+<div class="block">引数として渡された値を列挙子に設定する値として追加します。この <a href="#put(java.lang.Class,java.lang.Object)"><code>put(Class, Object)</code></a>
  メソッドは自分自身のインスタンスを返却するため、メソッドチェーンの形式で後続の処理を行うことが可能です。</div>
 <dl class="notes">
 <dt>パラメータ:</dt>
+<dd><code>clazz</code> - 引数のクラスオブジェクト</dd>
 <dd><code>value</code> - 列挙子固有の値をとして設定する任意の型の値</dd>
 <dt>戻り値:</dt>
 <dd>自分自身のインスタンス</dd>
