@@ -89,9 +89,9 @@ public enum AnnotationPattern implements BiCatalog<AnnotationPattern, String> {
     LOMBOK_ALL_ARGS_CONSTRUCTOR(11, "@AllArgsConstructor"),
 
     /**
-     * AllNoConstructor (Lombok)
+     * NoArgsConstructor (Lombok)
      */
-    LOMBOK_NO_ARGS_CONSTRUCTOR(12, "@AllNoConstructor"),
+    LOMBOK_NO_ARGS_CONSTRUCTOR(12, "@NoArgsConstructor"),
 
     /**
      * Builder (Lombok)
