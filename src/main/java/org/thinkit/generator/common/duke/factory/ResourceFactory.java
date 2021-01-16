@@ -295,26 +295,25 @@ public abstract class ResourceFactory {
      * {@link ResourceFactory} を継承した具象クラスは必ず
      * {@link #createConstructorProcess(String)} を実装してください。
      *
-     * @param variableName 変数名
+     * @param process 処理
      * @return {@link ConstructorProcess} のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public abstract ConstructorProcess createConstructorProcess(String variableName);
+    public abstract ConstructorProcess createConstructorProcess(String process);
 
     /**
      * {@link ConstructorProcess} のインスタンスを生成し返却する抽象メソッドです。<br>
      * {@link ResourceFactory} を継承した具象クラスは必ず
      * {@link #createConstructorProcess(String, String)} を実装してください。
      *
-     * @param variableName 変数名
-     * @param getterName   ゲッター名
+     * @param process    処理
+     * @param getterName ゲッター名
      * @return {@link ConstructorProcess} のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public abstract ConstructorProcess createConstructorProcess(@NonNull String variableName,
-            @NonNull String getterName);
+    public abstract ConstructorProcess createConstructorProcess(@NonNull String process, @NonNull String getterName);
 
     /**
      * {@link Method} のインスタンスを生成し返却する抽象メソッドです。<br>
@@ -338,12 +337,12 @@ public abstract class ResourceFactory {
      * {@link ResourceFactory} を継承した具象クラスは必ず {@link #createMethodProcess(String)}
      * を実装してください。
      *
-     * @param variableName 変数名
+     * @param process 処理
      * @return {@link MethodProcess} のインスタンス
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    public abstract MethodProcess createMethodProcess(@NonNull String variableName);
+    public abstract MethodProcess createMethodProcess(@NonNull String process);
 
     /**
      * {@link Package} のインスタンスを生成し返却する抽象メソッドです。<br>

@@ -55,22 +55,22 @@ public abstract class ConstructorProcess extends Process {
     /**
      * コンストラクタ
      *
-     * @param variableName 変数名
+     * @param process 処理
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected ConstructorProcess(@NonNull String variableName) {
-        super(variableName);
+    protected ConstructorProcess(@NonNull String process) {
+        super(process);
     }
 
     /**
      * コンストラクタ
      *
-     * @param variableName 変数名
-     * @param getterName   ゲッター名
+     * @param process    処理
+     * @param getterName ゲッター名
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected ConstructorProcess(@NonNull String variableName, @NonNull String getterName) {
-        super(variableName);
+    protected ConstructorProcess(@NonNull String process, @NonNull String getterName) {
+        super(process);
         this.getterName = getterName;
     }
 

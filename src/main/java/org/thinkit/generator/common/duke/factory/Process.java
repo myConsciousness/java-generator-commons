@@ -33,10 +33,10 @@ import lombok.ToString;
 public abstract class Process extends JavaComponent {
 
     /**
-     * 変数名
+     * 処理
      */
     @Getter(AccessLevel.PROTECTED)
-    private String variableName;
+    private String process;
 
     /**
      * デフォルトコンストラクタ
@@ -48,11 +48,11 @@ public abstract class Process extends JavaComponent {
     /**
      * コンストラクタ
      *
-     * @param variableName 変数名
+     * @param process 処理
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected Process(@NonNull String variableName) {
-        this.variableName = variableName;
+    protected Process(@NonNull String process) {
+        this.process = process;
     }
 }

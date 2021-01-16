@@ -47,12 +47,12 @@ public abstract class MethodProcess extends Process {
     /**
      * コンストラクタ
      *
-     * @param variableName 変数名
+     * @param process 処理
      *
      * @exception NullPointerException 引数として {@code null} が渡された場合
      */
-    protected MethodProcess(@NonNull String variableName) {
-        super(variableName);
+    protected MethodProcess(@NonNull String process) {
+        super(process);
     }
 
     /**
