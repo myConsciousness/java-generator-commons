@@ -88,6 +88,12 @@ public abstract class ClassBody extends JavaComponent {
     private List<Method> methods;
 
     /**
+     * インナークラスリスト
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private List<ClassBody> innerClasses;
+
+    /**
      * デフォルトコンストラクタ
      */
     @SuppressWarnings("unused")
@@ -230,6 +236,24 @@ public abstract class ClassBody extends JavaComponent {
         }
 
         this.methods.add(method);
+        return this;
+    }
+
+    /**
+     * インナークラスのクラスボディ部定義を追加します。
+     *
+     * @param classBody インナークラスのクラスボディ部定義
+     * @return 自分自身のインスタンス
+     *
+     * @exception NullPointerException 引数として {@code null} が渡された場合
+     */
+    public ClassBody add(@NonNull ClassBody classBody) {
+
+        if (this.innerClasses == null) {
+            this.innerClasses = new ArrayList<>(0);
+        }
+
+        this.innerClasses.add(classBody);
         return this;
     }
 }
