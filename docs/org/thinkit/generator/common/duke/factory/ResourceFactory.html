@@ -178,7 +178,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 </tr>
 <tr class="alt-color" id="i6">
 <td class="col-first"><code>abstract <a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">ConstructorProcess</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createConstructorProcess(java.lang.String,java.lang.String)">createConstructorProcess</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createConstructorProcess(java.lang.String,java.lang.String)">createConstructorProcess</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process,
 @NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;getterName)</code></th>
 <td class="col-last">
 <div class="block"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。</div>
@@ -186,7 +186,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 </tr>
 <tr class="row-color" id="i7">
 <td class="col-first"><code>abstract <a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">ConstructorProcess</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createConstructorProcess(java.lang.String)">createConstructorProcess</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createConstructorProcess(java.lang.String)">createConstructorProcess</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process)</code></th>
 <td class="col-last">
 <div class="block"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。</div>
 </td>
@@ -336,7 +336,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 </tr>
 <tr class="alt-color" id="i26">
 <td class="col-first"><code>abstract <a href="MethodProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">MethodProcess</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createMethodProcess(java.lang.String)">createMethodProcess</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createMethodProcess(java.lang.String)">createMethodProcess</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process)</code></th>
 <td class="col-last">
 <div class="block"><a href="MethodProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>MethodProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。</div>
 </td>
@@ -813,13 +813,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 <li>
 <section class="detail" id="createConstructorProcess(java.lang.String)">
 <h3>createConstructorProcess</h3>
-<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">ConstructorProcess</a></span>&nbsp;<span class="member-name">createConstructorProcess</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName)</span></div>
+<div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">ConstructorProcess</a></span>&nbsp;<span class="member-name">createConstructorProcess</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process)</span></div>
 <div class="block"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。<br>
  <a href="ResourceFactory.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ResourceFactory</code></a> を継承した具象クラスは必ず
  <a href="#createConstructorProcess(java.lang.String)"><code>createConstructorProcess(String)</code></a> を実装してください。</div>
 <dl class="notes">
 <dt>パラメータ:</dt>
-<dd><code>variableName</code> - 変数名</dd>
+<dd><code>process</code> - 処理</dd>
 <dt>戻り値:</dt>
 <dd><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンス</dd>
 <dt>例外:</dt>
@@ -831,7 +831,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 <section class="detail" id="createConstructorProcess(java.lang.String,java.lang.String)">
 <h3>createConstructorProcess</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">ConstructorProcess</a></span>&nbsp;<span class="member-name">createConstructorProcess</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName,
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process,
 @NonNull
 @NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;getterName)</span></div>
 <div class="block"><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。<br>
@@ -839,7 +839,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
  <a href="#createConstructorProcess(java.lang.String,java.lang.String)"><code>createConstructorProcess(String, String)</code></a> を実装してください。</div>
 <dl class="notes">
 <dt>パラメータ:</dt>
-<dd><code>variableName</code> - 変数名</dd>
+<dd><code>process</code> - 処理</dd>
 <dd><code>getterName</code> - ゲッター名</dd>
 <dt>戻り値:</dt>
 <dd><a href="ConstructorProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ConstructorProcess</code></a> のインスタンス</dd>
@@ -880,13 +880,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 <section class="detail" id="createMethodProcess(java.lang.String)">
 <h3>createMethodProcess</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="MethodProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス">MethodProcess</a></span>&nbsp;<span class="member-name">createMethodProcess</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;variableName)</span></div>
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;process)</span></div>
 <div class="block"><a href="MethodProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>MethodProcess</code></a> のインスタンスを生成し返却する抽象メソッドです。<br>
  <a href="ResourceFactory.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>ResourceFactory</code></a> を継承した具象クラスは必ず <a href="#createMethodProcess(java.lang.String)"><code>createMethodProcess(String)</code></a>
  を実装してください。</div>
 <dl class="notes">
 <dt>パラメータ:</dt>
-<dd><code>variableName</code> - 変数名</dd>
+<dd><code>process</code> - 処理</dd>
 <dt>戻り値:</dt>
 <dd><a href="MethodProcess.html" title="org.thinkit.generator.common.duke.factory内のクラス"><code>MethodProcess</code></a> のインスタンス</dd>
 <dt>例外:</dt>
