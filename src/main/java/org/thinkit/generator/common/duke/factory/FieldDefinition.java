@@ -46,8 +46,7 @@ public abstract class FieldDefinition extends JavaComponent {
     /**
      * 初期値
      */
-    @Getter(AccessLevel.PROTECTED)
-    private String initialValue;
+    private String initialValue = null;
 
     /**
      * デフォルトコンストラクタ
@@ -83,5 +82,25 @@ public abstract class FieldDefinition extends JavaComponent {
         this.dataType = dataType;
         this.variableName = variableName;
         this.initialValue = initialValue;
+    }
+
+    /**
+     * {@link FieldDefintiion} のインスタンス生成時に指定されたフィールドのデータ型に基づいて初期値を加工し返却します。
+     * <p>
+     * 指定されたデータ型が文字列型の場合はダブルクオーテーションを指定された初期値に付与し、文字型の場合はクオーテーションを指定された初期値に付与します。初期値が指定されていない場合は空文字列を返却します。
+     *
+     * @return {@link FieldDefintiion} のインスタンス生成時に指定されたフィールドのデータ型に基づいて加工された初期値
+     */
+    protected String getInitialValue() {
+
+        if (this.initialValue == null) {
+            return "";
+        }
+
+        return switch (this.dataType) {
+            case "String" -> String.format("\"%s\"", initialValue);
+            case "char", "Character" -> String.format("'%s'", initialValue);
+            default -> initialValue;
+        };
     }
 }
